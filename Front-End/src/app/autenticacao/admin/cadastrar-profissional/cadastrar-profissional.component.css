@@ -1,0 +1,17 @@
+.titulo{
+    text-align: center;
+    margin: 3% 0 5% 0;
+}
+.full-width {
+    width: 75%;
+    margin-left: 5% ;
+}
+
+.mat-raised-button {
+    margin-left: 5% ;
+    margin-bottom: 14.1%;
+}
+
+.formulario{
+    text-align: center;
+}
