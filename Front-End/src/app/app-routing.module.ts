@@ -12,6 +12,7 @@ import { CadastroComponent } from './formularios/cadastro/cadastro.component';
 import { ObservacoesComponent } from './formularios/observacoes/observacoes.component';
 import { AuthGuard } from '../app/autenticacao/helpers/guards/auth.guard'
 import { AltConsultaComponent } from './autenticacao/cliente/alt-consulta/alt-consulta.component';
+import { PerfilComponent } from './autenticacao/cliente/perfil/perfil.component';
 
 
 const routes: Routes = [
@@ -27,6 +28,7 @@ const routes: Routes = [
   {path: 'profissionais', component: CadastrarProfissionalComponent, canActivate: [AuthGuard]},
   {path: 'verConsulta', component: VerConsultaComponent, canActivate: [AuthGuard]},
   {path: 'altConsulta', component: AltConsultaComponent ,canActivate: [AuthGuard]},
+  {path: 'meuPerfil', component: PerfilComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo:'/home'}
 ];
 

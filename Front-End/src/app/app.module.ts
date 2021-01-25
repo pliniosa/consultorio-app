@@ -21,7 +21,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatDialogModule } from '@angular/material/dialog';
 
-
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from "@angular/flex-layout";
@@ -48,6 +47,7 @@ import { GoogleLoginProvider, FacebookLoginProvider} from 'angularx-social-login
 import { VerConsultaComponent } from './autenticacao/cliente/ver-consulta/ver-consulta.component';
 import { CadastrarProfissionalComponent } from './autenticacao/admin/cadastrar-profissional/cadastrar-profissional.component';
 import { AltConsultaComponent } from './autenticacao/cliente/alt-consulta/alt-consulta.component';
+import { PerfilComponent } from './autenticacao/cliente/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +67,7 @@ import { AltConsultaComponent } from './autenticacao/cliente/alt-consulta/alt-co
     VerConsultaComponent,
     CadastrarProfissionalComponent,
     AltConsultaComponent,
-
+    PerfilComponent,
   ],
   
   imports: [
@@ -99,8 +99,8 @@ import { AltConsultaComponent } from './autenticacao/cliente/alt-consulta/alt-co
     MatNativeDateModule,
     MatRippleModule,
     MatSnackBarModule,
-    MatDialogModule
-    
+    MatDialogModule,
+
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},

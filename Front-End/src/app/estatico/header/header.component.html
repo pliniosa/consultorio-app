@@ -112,6 +112,9 @@
             <span>Cadastrar</span>
         </button>
         <app-logar *ngIf="auth===false"></app-logar>
+        <button mat-button (click)="toPerfil()" *ngIf="auth===true && adm===false">
+            <span>Perfil</span>
+        </button>
         <button mat-raised-button color="warn" *ngIf="auth===true" (click)=deslogar()>
             <span>Logout</span>
         </button>

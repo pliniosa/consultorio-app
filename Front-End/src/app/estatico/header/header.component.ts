@@ -49,6 +49,9 @@ export class HeaderComponent implements OnInit {
   toAgendar() {
     this.router.navigate(['agendar']);
   }
+  toPerfil(){
+    this.router.navigate(['meuPerfil']);
+  }
   toVerConsulta() {
     this.router.navigate(['verConsulta']);
   }
