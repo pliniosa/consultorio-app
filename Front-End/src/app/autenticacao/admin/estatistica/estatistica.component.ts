@@ -43,7 +43,18 @@ export class EstatisticaComponent implements OnInit {
           label: 'Estatistica',
           data: [this.jan.length, this.fev.length, this.mar.length, this.abr.length, this.mai.length, this.jun.length, this.jul.length, this.ago.length, this.set.length, this.out.length, this.nov.length, this.dez.length],
           backgroundColor: [
-            'rgba(255,99,132,0.2)'
+            'rgba(13,99,255,0.2)',
+            'rgba(233,99,233,0.2)',
+            'rgba(57,99,211,0.2)',
+            'rgba(189,99,189,0.2)',
+            'rgba(101,99,167,0.2)',
+            'rgba(145,99,145,0.2)',
+            'rgba(101,99,123,0.2)',
+            'rgba(123,99,101,0.2)',
+            'rgba(79,99,79,0.2)',
+            'rgba(211,99,57,0.2)',
+            'rgba(35,99,35,0.2)',
+            'rgba(255,99,13,0.2)',
           ],
           borderWidth: 1
         }]
@@ -58,10 +69,6 @@ export class EstatisticaComponent implements OnInit {
         }
       }
     })
-  }
-
-  async ngAfterViewInit() {
-
   }
 
   async getContador() {
