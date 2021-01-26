@@ -12,9 +12,6 @@ import { AgendaService } from '../../service/agenda/agenda.service';
 })
 export class VerAgendaComponent implements OnInit {
 
-  /*agenda = {} as Agenda;
-  agendamento : Agenda[];*/
-
   displayedColumns: string[] = ['index', 'nome', 'profissional', 'data', 'hora'];
   dataSource;
   length;
@@ -34,7 +31,6 @@ export class VerAgendaComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }
-
 
   getAgendaTodos(){
     this.agendaService.getAgendaTodos().subscribe((agenda: Agenda[]) => {

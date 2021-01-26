@@ -58,6 +58,10 @@ export class HeaderComponent implements OnInit {
   toAltConsulta() {
     this.router.navigate(['altConsulta']);
   }
+  toEstatisticas(){
+    this.router.navigate(['estatistica']);
+  }
+
   @HostListener('window:resize', ['$event'])
   onResize(event) {
     this.innerWidth = window.innerWidth;

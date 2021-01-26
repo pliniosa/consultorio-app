@@ -33,7 +33,7 @@
         <ng-container  matColumnDef="star" stickyEnd>
             <th mat-header-cell *matHeaderCellDef></th>
             <td mat-cell *matCellDef="let element">
-              <button *ngIf ="(dataDia | date:'d/M/yy' > element.data | date:'d/M/yy')" mat-button (click)="deleteAgenda(element.data)"><mat-icon>delete</mat-icon></button>
+              <button *ngIf ="(dataDia | date:'dd/MM' < element.data | date:'dd/MM')" mat-button (click)="deleteAgenda(element.data)"><mat-icon>delete</mat-icon></button>
             </td>
         </ng-container>
 

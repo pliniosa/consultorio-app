@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { Agenda } from '../../models/agenda';
 import { HttpClient, HttpErrorResponse, HttpHeaders} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import { retry, catchError } from 'rxjs/operators';
+import { retry, catchError, map } from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class AgendaService {
+
   private SERVER_URL = environment.api;
 
   constructor(private httpClient: HttpClient) { }
@@ -46,6 +46,11 @@ export class AgendaService {
         retry(2),
         catchError(this.handleError));
   }
+//teste
+  getContador(): Promise<Agenda[]> {
+  return this.httpClient.get<Agenda[]>(`${this.SERVER_URL}/agenda/retornarTodos/`)
+    .toPromise();
+}
 
   // Usado pelo cliente para ver seus agendamentos
   getAgendaCliente(param: string): Observable<Agenda[]> {
@@ -55,7 +60,7 @@ export class AgendaService {
         retry(2),
         catchError(this.handleError));
   }
-  ///////////////////////////////////////
+  
   getAgendaData(param: string): Observable<Agenda[]> {
 
     return this.httpClient.get<Agenda[]>(`${this.SERVER_URL}/agenda/retornarProCliente/${param}`)
@@ -63,7 +68,7 @@ export class AgendaService {
         retry(2),
         catchError(this.handleError));
   }
-  //////////////////////////
+
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';

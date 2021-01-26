@@ -28,6 +28,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { CookieService } from 'ngx-cookie-service';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './estatico/header/header.component';
@@ -48,6 +49,7 @@ import { VerConsultaComponent } from './autenticacao/cliente/ver-consulta/ver-co
 import { CadastrarProfissionalComponent } from './autenticacao/admin/cadastrar-profissional/cadastrar-profissional.component';
 import { AltConsultaComponent } from './autenticacao/cliente/alt-consulta/alt-consulta.component';
 import { PerfilComponent } from './autenticacao/cliente/perfil/perfil.component';
+import { EstatisticaComponent } from './autenticacao/admin/estatistica/estatistica.component';
 
 @NgModule({
   declarations: [
@@ -68,6 +70,7 @@ import { PerfilComponent } from './autenticacao/cliente/perfil/perfil.component'
     CadastrarProfissionalComponent,
     AltConsultaComponent,
     PerfilComponent,
+    EstatisticaComponent,
   ],
   
   imports: [
@@ -100,7 +103,7 @@ import { PerfilComponent } from './autenticacao/cliente/perfil/perfil.component'
     MatRippleModule,
     MatSnackBarModule,
     MatDialogModule,
-
+    ChartsModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},

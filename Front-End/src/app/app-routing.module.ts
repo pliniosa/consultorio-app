@@ -13,6 +13,7 @@ import { ObservacoesComponent } from './formularios/observacoes/observacoes.comp
 import { AuthGuard } from '../app/autenticacao/helpers/guards/auth.guard'
 import { AltConsultaComponent } from './autenticacao/cliente/alt-consulta/alt-consulta.component';
 import { PerfilComponent } from './autenticacao/cliente/perfil/perfil.component';
+import { EstatisticaComponent } from './autenticacao/admin/estatistica/estatistica.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'verConsulta', component: VerConsultaComponent, canActivate: [AuthGuard]},
   {path: 'altConsulta', component: AltConsultaComponent ,canActivate: [AuthGuard]},
   {path: 'meuPerfil', component: PerfilComponent, canActivate: [AuthGuard]},
+  {path: 'estatistica', component: EstatisticaComponent, canActivate: [AuthGuard]},
   {path: '**', redirectTo:'/home'}
 ];
 

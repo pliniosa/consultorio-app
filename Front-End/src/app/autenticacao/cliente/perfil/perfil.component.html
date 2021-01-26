@@ -1,13 +1,11 @@
-<div style="text-align: center; margin-top: 1%;">
-    <h1>Cadastro</h1>
-</div>
-
-
 <!--Formulario de cadastro-->
 
-<div class="formulario" *ngIf="controlePDF===false" >
+<div class="formulario" *ngIf="controlePDF===false">
+    <div style="text-align: center; margin-top: 1%;">
+        <h1>Alterar Perfil</h1>
+    </div>
     <form (ngSubmit)="registrarUsuario(form)" #form="ngForm">
-       
+
         <mat-form-field appearance="fill" class="cadastro">
             <mat-label>Nome</mat-label>
             <input matInput type="text" id="name" name="name" [(ngModel)]="conta.nome" disabled>
@@ -19,7 +17,7 @@
             <input matInput type="email" id="email" name="email" [(ngModel)]="conta.email" disabled>
         </mat-form-field>
         <br>
-        
+
         <mat-form-field appearance="fill" class="cadastro">
             <mat-label>Rua</mat-label>
             <input matInput type="text" id="rua" name="rua" [(ngModel)]="conta.rua" required>
@@ -40,56 +38,75 @@
 
         <mat-form-field appearance="fill" class="cadastro">
             <mat-label>Telefone</mat-label>
-            <input matInput type="tel" id="telefone" name="telefone" maxlength="11" [(ngModel)]="conta.telefone" required>
+            <input matInput type="tel" id="telefone" name="telefone" maxlength="11" [(ngModel)]="conta.telefone"
+                required>
         </mat-form-field>
         <br>
 
-        <button mat-raised-button color="primary" class="registerbtn" type="submit" [disabled]="!form.form.valid" >Alterar dados </button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="!form.form.valid">Alterar dados </button>
+        <button mat-raised-button color="primary" type="submit" (click)="altPDF()" style="margin-left: 1%;"> Voltar
+            PDF</button>
     </form>
-    <button mat-raised-button color="primary" class="registerbtn" type="submit" (click)="altPDF()"> Voltar PDF</button>
+
 </div>
 
 
-<div class="formulario" *ngIf="controlePDF===true" >
-    <form *ngFor="let aux of cliente">
+<div class="formulario" *ngIf="controlePDF===true">
 
+    <form id="content" #content *ngFor="let aux of cliente">
+        <div style="margin-top: 3%;">
+            <h1>Dados pessoais do paciente {{aux.nome}}</h1>
+        </div>
         <mat-form-field appearance="fill" class="cadastro">
-            <mat-label>Nome</mat-label>
-            <input matInput type="text" id="name" name="name" [(ngModel)]="conta.nome" disabled>
+            <tr>
+                <td>Nome:</td>
+                <td>{{aux.nome}}</td>
+            </tr>
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill" class="cadastro">
-            <mat-label>E-mail</mat-label>
-            <input matInput type="email" id="email" name="email" [(ngModel)]="conta.email" disabled>
-        </mat-form-field>
-        <br>
-        
-        <mat-form-field appearance="fill" class="cadastro">
-            <mat-label>Rua</mat-label>
-            <input matInput type="text" value="{{aux.rua}}" disabled>
+            <tr>
+                <td>Email:</td>
+                <td>{{aux.email}}</td>
+            </tr>
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill" class="cadastro">
-            <mat-label>Numero</mat-label>
-            <input matInput type="text" value="{{aux.numero}}" disabled>
+            <tr>
+                <td>Rua</td>
+                <td>{{aux.rua}}</td>
+            </tr>
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill" class="cadastro">
-            <mat-label>Cidade</mat-label>
-            <input matInput type="text"value="{{aux.cidade}}" disabled>
+            <tr>
+                <td>Numero: </td>
+                <td>{{aux.numero}}</td>
+            </tr>
         </mat-form-field>
         <br>
 
         <mat-form-field appearance="fill" class="cadastro">
-            <mat-label>Telefone</mat-label>
-            <input matInput type="tel" value="{{aux.telefone}}" disabled>
+            <tr>
+                <td>Cidade:</td>
+                <td>{{aux.cidade}}</td>
+            </tr>
+        </mat-form-field>
+        <br>
+
+        <mat-form-field appearance="fill" class="cadastro">
+            <tr>
+                <td>Telefone:</td>
+                <td>{{aux.telefone}}</td>
+            </tr>
         </mat-form-field>
         <br>
 
     </form>
-    <button mat-raised-button color="primary" class="registerbtn" type="submit">Imprimir PDF</button>
-    <button mat-raised-button color="warn" class="registerbtn" type="submit" style="margin-left: 1%;" (click)="altPerfil()"> Alterar dados </button>
+    <button mat-raised-button color="primary" (click)="gerarPDF()">Imprimir PDF</button>
+    <button mat-raised-button color="warn" type="submit" style="margin-left: 1%;" (click)="altPerfil()"> Alterar dados
+    </button>
 </div>
