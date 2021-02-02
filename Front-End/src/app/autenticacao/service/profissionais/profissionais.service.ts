@@ -33,6 +33,12 @@ export class ProfissionaisService {
       catchError(this.handleError))
   }
 
+  deleteProfissional(cadastro){
+    return this.httpClient.delete(`${this.SERVER_URL}/profissionais/deletar/${cadastro}`)
+    .pipe(
+      retry(2),
+      catchError(this.handleError))
+  }
   // Manipulação de erros
   handleError(error: HttpErrorResponse) {
     let errorMessage = '';

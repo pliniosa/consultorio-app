@@ -24,7 +24,6 @@ export class VerAgendaComponent implements OnInit {
   ngOnInit(): void {
     this.getAgendaTodos();
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
   }
 
   ngAfterViewInit() {

@@ -1,9 +1,9 @@
-import { AfterContentInit, AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Chart } from 'chart.js';
-import { async } from 'rxjs/internal/scheduler/async';
 import { Agenda } from '../../models/agenda'
 import { AgendaService } from '../../service/agenda/agenda.service';
-
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas'
 
 @Component({
   selector: 'app-estatistica',
@@ -31,6 +31,19 @@ export class EstatisticaComponent implements OnInit {
   constructor(
     private agendaService: AgendaService
   ) { }
+
+  @ViewChild('divChart') content: ElementRef;
+
+  public gerarPDF(){
+    var data = document.getElementById('divChart');  
+    html2canvas(data).then(canvas => {  
+      const contentDataURL = canvas.toDataURL('image/png')  
+      let pdf = new jsPDF('l', 'mm', 'a4'); // A4 size page of PDF  
+
+      pdf.addImage(contentDataURL, 'PNG', 20, 15, 250, 120)
+      pdf.save('estatistica.pdf'); // Generated PDF   
+    }); 
+  }
 
   async ngOnInit() {
     await this.getContador();

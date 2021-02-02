@@ -10,7 +10,7 @@ import { ContatoService } from '../../service/contato/contato.service';
   templateUrl: './ver-opinioes.component.html',
   styleUrls: ['./ver-opinioes.component.css']
 })
-export class VerOpinioesComponent implements OnInit, AfterViewInit {
+export class VerOpinioesComponent implements OnInit {
 
   displayedColumns: string[] = ['index', 'nome', 'telefone', 'opiniao', 'data'];
   dataSource;
@@ -31,7 +31,7 @@ export class VerOpinioesComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.getContato();
     this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    
   }
 
   ngAfterViewInit() {

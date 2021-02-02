@@ -18,8 +18,10 @@ router.post('/registrar', async (req, res) => {
     }
 });
 
-router.delete('/deletar', async (req, res) => {
-    const { cro } = req.body;
+router.delete('/deletar/:cro', async (req, res) => {
+
+    const cro = req.params.cro;
+
     try {
         if (await Profissional.findOneAndDelete({ cro })) {
             return res.status(200).send({ mensagem: 'Dentista Deletado' });

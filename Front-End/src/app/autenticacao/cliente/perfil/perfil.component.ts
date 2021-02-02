@@ -42,17 +42,11 @@ export class PerfilComponent implements OnInit {
   public gerarPDF(){
     var data = document.getElementById('content');  
     html2canvas(data).then(canvas => {  
-      // Few necessary setting options  
-      var imgWidth = 258;   
-      var pageHeight = 295;    
-      var imgHeight = canvas.height * imgWidth / canvas.width;  
-      var heightLeft = imgHeight;  
-  
       const contentDataURL = canvas.toDataURL('image/png')  
-      let pdf = new jsPDF('p', 'mm', 'a4'); // A4 size page of PDF  
-      var position = 10;  
-      pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight)  
-      pdf.save('MYPdf.pdf'); // Generated PDF   
+      let pdf = new jsPDF('l', 'mm', 'a4'); // A4 size page of PDF  
+
+      pdf.addImage(contentDataURL, 'PNG', -100, 20, 400, 100)
+      pdf.save('perfil.pdf'); // Generated PDF   
     }); 
   }
 
