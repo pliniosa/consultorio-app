@@ -6,6 +6,7 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
+var porta = process.env.PORT || 3000;
 
 /*app.use(express.static(path.join(__dirname, 'public')));*/
 
@@ -28,4 +29,4 @@ app.use(function(req,res){
 require('./app/controler/index')(app);
 
 
-app.listen(3000);
+app.listen(porta);
