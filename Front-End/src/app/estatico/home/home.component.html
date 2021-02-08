@@ -70,11 +70,10 @@
 </mat-grid-list>
 
 
-<mat-grid-list  #grid [cols]="cols" rowHeight="20:13" class="pag2">
+<mat-grid-list  #grid [cols]="cols" rowHeight="20:13" class="pag2" *ngIf="cols===2">
     <br>
     <h1><b>Prevenir é o melhor remedio</b></h1>
     <mat-grid-tile>
-
         <mat-card class="card2">
 
             <mat-card-header>
