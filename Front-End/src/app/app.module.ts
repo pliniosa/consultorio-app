@@ -114,7 +114,7 @@ import { EstatisticaComponent } from './autenticacao/admin/estatistica/estatisti
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('624796833023-clhjgupm0pu6vgga7k5i5bsfp6qp6egh.apps.googleusercontent.com'),
+            provider: new GoogleLoginProvider('519240808062-nhrhd5evksp3q3mbje2tg191s18pj2mh.apps.googleusercontent.com'),
           },
           {
             id: FacebookLoginProvider.PROVIDER_ID,
